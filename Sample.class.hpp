@@ -1,5 +1,5 @@
-#ifdef SAMPLE_CLASS_H
-# define SMAPLE_CLASS_H
+#ifndef SAMPLE_CLASS_HPP
+# define SAMPLE_CLASS_HPP
 
 class Sample {
 	
