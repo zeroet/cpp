@@ -6,7 +6,7 @@
 /*   By: seyun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 01:32:26 by seyun             #+#    #+#             */
-/*   Updated: 2022/03/15 02:02:10 by seyun            ###   ########.fr       */
+/*   Updated: 2022/03/15 19:39:47 by seyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ private:
 public:
 	User();
 	~User();
-
+	
 	void setFirstName( std::string const str );
 	void setLastName( std::string const str );
 	void setNickName( std:: string const str);
