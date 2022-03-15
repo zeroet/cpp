@@ -6,7 +6,7 @@
 /*   By: seyun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 01:18:08 by seyun             #+#    #+#             */
-/*   Updated: 2022/03/15 01:59:14 by seyun            ###   ########.fr       */
+/*   Updated: 2022/03/15 19:24:20 by seyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 User::User()
 {
-	std::cout << "constructor Class User" << std::endl;
 }
 
 User::~User()
 {
-	std::cout << "destructor Class User" << std::endl;
 }
 
 void	User::setFirstName(std::string const str)
@@ -27,31 +25,31 @@ void	User::setFirstName(std::string const str)
 	this->_firstname = str;
 }
 
-/*void	User::setLastName(std::string const str)
+void	User::setLastName(std::string const str)
 {
-	this->_lastname;
+	this->_lastname = str;
 }
 
 void	User::setNickName(std::string const str)
 {
-	this->_nickname;
+	this->_nickname = str;
 }
 
 void	User::setPhoneNumber(std::string const str)
 {
-	this->_phonenumber;
+	this->_phonenumber = str;
 }
 
 void	User::setDarkestSecret(std::string const str)
 {
-	this->_darkestsecret;
+	this->_darkestsecret = str;
 }
-*/
+
 std::string User::getFirstName() const
 {
 	return (this->_firstname);
 }
-/*
+
 std::string	User::getLastName() const
 {
 	return (this->_lastname);
@@ -70,4 +68,4 @@ std::string User::getPhoneNumber() const
 std::string User::getDarkestSecret() const
 {
 	return (this->_darkestsecret);
-}*/
+}
