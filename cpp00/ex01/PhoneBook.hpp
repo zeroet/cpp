@@ -6,7 +6,7 @@
 /*   By: seyun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 23:02:02 by seyun             #+#    #+#             */
-/*   Updated: 2022/03/16 18:11:40 by seyun            ###   ########.fr       */
+/*   Updated: 2022/03/16 19:44:44 by seyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	Phonebook();
 	~Phonebook();
 
-	void		Add(void);
+	void		Add(int *Num);
 	void		Search(void);
 	void		Command(void);
 	void		setIndex(int num);

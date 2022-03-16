@@ -6,7 +6,7 @@
 /*   By: seyun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 23:01:14 by seyun             #+#    #+#             */
-/*   Updated: 2022/03/16 18:11:39 by seyun            ###   ########.fr       */
+/*   Updated: 2022/03/16 19:16:35 by seyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int main(void)
 {
 	Phonebook book;
 
-	while(1)
-		book.Command();
+	book.Command();
 	return (0);
 }
