@@ -140,7 +140,7 @@ void Phonebook:: PrintFullInfo(int index)
 
 bool Phonebook::CheckStr(std::string str)
 {
-	if (str.length() > 2)
+	if (str.length() > 1)
 		return (0);
 	if (std::isdigit(str[0]))
 	{
