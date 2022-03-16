@@ -1,6 +1,6 @@
 #include "PhoneBook.hpp"
 
-Phonebook::Phonebook() : _index(-1)
+Phonebook::Phonebook() : _index(0)
 {
 	std::cout << "Phonebook Open" << std::endl;
 }
@@ -23,18 +23,22 @@ int	Phonebook::getIndex() const
 void Phonebook::Command()
 {
 	std::string str("");
+	int Num(0);
 	
-	std::cout << "Enter : ADD | SEARCH | EXIT" << std::endl;
-	if(std::getline(std::cin, str).eof())
-		Exit();
-	if (str.compare("ADD") == 0)
-		Add();
-	else if (str.compare("SEARCH") == 0)
-		Search();
-	else if (str.compare("EXIT") == 0)
-		Exit();
-	else
-		std::cout << "Command not found" << std::endl;
+	while (1)
+	{
+		std::cout << "Enter : ADD | SEARCH | EXIT" << std::endl;
+		if(std::getline(std::cin, str).eof())
+			Exit();
+		if (str.compare("ADD") == 0)
+			Add(&Num);
+		else if (str.compare("SEARCH") == 0)
+			Search();
+		else if (str.compare("EXIT") == 0)
+			Exit();
+		else
+			std::cout << "Command not found" << std::endl;
+	}
 }
 
 std::string Phonebook::CheckValue(std::string question) const
@@ -52,31 +56,25 @@ std::string Phonebook::CheckValue(std::string question) const
 	return (ret);
 }
 
-void Phonebook::Add(void)
+void Phonebook::Add(int *Num)
 {
 	std::string str = "";
-	int index = getIndex();
 	
-	if (++index < 8)
-	{
-		_usr[index].setFirstName(CheckValue("first name: "));
-		_usr[index].setLastName(CheckValue("last name: "));
-		_usr[index].setNickName(CheckValue("nick name: "));
-		_usr[index].setPhoneNumber(CheckValue("phone number: "));
-		_usr[index].setDarkestSecret(CheckValue("darkest secret: "));
-		setIndex(index);
-		std::cout << "info saved in Phonebook index[" << index << "]" << std::endl;
-	}
-	else
-		std::cout << "Phonebook is full" << std::endl;
+	_usr[*Num % 8].setFirstName(CheckValue("first name: "));
+	_usr[*Num % 8].setLastName(CheckValue("last name: "));
+	_usr[*Num % 8].setNickName(CheckValue("nick name: "));
+	_usr[*Num % 8].setPhoneNumber(CheckValue("phone number: "));
+	_usr[*Num % 8].setDarkestSecret(CheckValue("darkest secret: "));
+	std::cout << "info saved in Phonebook index[" << *Num % 8 << "]" << std::endl;
+	setIndex((*Num % 8));
+	*Num += 1;
 }
 
 void Phonebook::RecapInfo(void)
 {
-	int index = getIndex();
 	int	i(0);
-
-	while (i <= index)
+	
+	while (!_usr[i].getFirstName().empty())
 	{
 		std::cout << "|";
 		std::cout << std::setw(10) << i;
@@ -88,6 +86,8 @@ void Phonebook::RecapInfo(void)
 		std::cout << std::setw(10) << GetNickName(i);
 		std::cout << "|" << std::endl;
 		i++;
+		if (i == 8)
+			return ;
 	}
 }
 
@@ -145,7 +145,8 @@ bool Phonebook::CheckStr(std::string str)
 	if (std::isdigit(str[0]))
 	{
 		if ((stoi(str) >= 0) && (stoi(str) < 8))
-			return (1);
+			if (!_usr[std::stoi(str)].getFirstName().empty())
+				return (1);
 	}
 	else
 		return (0);
@@ -154,12 +155,14 @@ bool Phonebook::CheckStr(std::string str)
 
 void Phonebook::Search(void)
 {
-	int index = getIndex();
 	int	i(0);
 	std::string str;
 
-	if (index == -1)
+	if (_usr[0].getFirstName().empty())
+	{	
 		std::cout << "ADD info First" << std::endl;
+		return ;
+	}
 	PutSearchPrint();
 	while (1)
 	{
