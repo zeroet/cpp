@@ -1,26 +1,26 @@
 #include "PhoneBook.hpp"
 
-Phonebook::Phonebook() : _index(0)
+PhoneBook::PhoneBook() : _index(0)
 {
-	std::cout << "Phonebook Open" << std::endl;
+	std::cout << "PhoneBook Open" << std::endl;
 }
 
-Phonebook::~Phonebook()
+PhoneBook::~PhoneBook()
 {
-	std::cout << "Phonebook Close" << std::endl;
+	std::cout << "PhoneBook Close" << std::endl;
 }
 
-void Phonebook::setIndex(int num)
+void PhoneBook::setIndex(int num)
 {
 	this->_index = num;
 }
 
-int	Phonebook::getIndex() const
+int	PhoneBook::getIndex() const
 {
 	return (this->_index);
 }
 
-void Phonebook::Command()
+void PhoneBook::Command()
 {
 	std::string str("");
 	int Num(0);
@@ -41,7 +41,7 @@ void Phonebook::Command()
 	}
 }
 
-std::string Phonebook::CheckValue(std::string question) const
+std::string PhoneBook::CheckValue(std::string question) const
 {
 	std::string ret;
 
@@ -56,7 +56,7 @@ std::string Phonebook::CheckValue(std::string question) const
 	return (ret);
 }
 
-void Phonebook::Add(int *Num)
+void PhoneBook::Add(int *Num)
 {
 	std::string str = "";
 	
@@ -70,7 +70,7 @@ void Phonebook::Add(int *Num)
 	*Num += 1;
 }
 
-void Phonebook::RecapInfo(void)
+void PhoneBook::RecapInfo(void)
 {
 	int	i(0);
 	
@@ -91,7 +91,7 @@ void Phonebook::RecapInfo(void)
 	}
 }
 
-void Phonebook::PutSearchPrint(void)
+void PhoneBook::PutSearchPrint(void)
 {
 	std::cout << "|";
 	std::cout << std::setw(10) << "index";
@@ -105,7 +105,7 @@ void Phonebook::PutSearchPrint(void)
 	RecapInfo();
 }
 
-std::string Phonebook::GetFirstName(int index)
+std::string PhoneBook::GetFirstName(int index)
 {
 	if (_usr[index].getFirstName().length() > 10)
 		return (_usr[index].getFirstName().substr(0, 9).append("."));
@@ -113,7 +113,7 @@ std::string Phonebook::GetFirstName(int index)
 		return (_usr[index].getFirstName());
 }
 
-std::string Phonebook::GetLastName(int index)
+std::string PhoneBook::GetLastName(int index)
 {
 	if (_usr[index].getLastName().length() > 10)
 		return (_usr[index].getLastName().substr(0 , 9).append("."));
@@ -121,7 +121,7 @@ std::string Phonebook::GetLastName(int index)
 		return (_usr[index].getLastName());
 }
 
-std::string Phonebook::GetNickName(int index)
+std::string PhoneBook::GetNickName(int index)
 {
 	if (_usr[index].getNickName().length() > 10)
 		return (_usr[index].getNickName().substr(0 , 9).append("."));
@@ -129,7 +129,7 @@ std::string Phonebook::GetNickName(int index)
 		return (_usr[index].getNickName());
 }
 
-void Phonebook:: PrintFullInfo(int index)
+void PhoneBook:: PrintFullInfo(int index)
 {
 	std::cout << "first name: " << _usr[index].getFirstName() << std::endl;
 	std::cout << "last name: " << _usr[index].getLastName() << std::endl;
@@ -138,7 +138,7 @@ void Phonebook:: PrintFullInfo(int index)
 	std::cout << "darkest secret: " << _usr[index].getDarkestSecret() << std::endl;
 }
 
-bool Phonebook::CheckStr(std::string str)
+bool PhoneBook::CheckStr(std::string str)
 {
 	if (str.length() > 1)
 		return (0);
@@ -153,7 +153,7 @@ bool Phonebook::CheckStr(std::string str)
 	return (0);
 }
 
-void Phonebook::Search(void)
+void PhoneBook::Search(void)
 {
 	int	i(0);
 	std::string str;
@@ -180,8 +180,8 @@ void Phonebook::Search(void)
 	}
 }
 
-void Phonebook::Exit(void) const
+void PhoneBook::Exit(void) const
 {
-	Phonebook::~Phonebook();
+	PhoneBook::~PhoneBook();
 	exit(0);
 }
