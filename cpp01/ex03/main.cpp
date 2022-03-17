@@ -20,6 +20,7 @@ int main()
 	{
 		std::cout << COLOUR_G;
 		Weapon club = Weapon("crude spiked club");
+		
 		HumanB jim("Jim");
 		jim.setWeapon(club);
 		jim.attack();
