@@ -18,7 +18,6 @@ int main(void)
 	std::cout << COLOUR_B;
 	c = b;
 
-
 	std::cout << COLOUR_FIN;
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;

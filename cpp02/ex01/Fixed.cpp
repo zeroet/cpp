@@ -2,7 +2,7 @@
 
 const int Fixed::_bits_fractionnaire(8);
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) : _value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }

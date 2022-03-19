@@ -42,7 +42,7 @@ public:
 	Fixed&	operator--(void);
 	Fixed	operator--(int);
 
-
+// probleme de access, si on met pas le static
  	static Fixed const &max(const Fixed &a, const Fixed &b);
 	static Fixed const &min(const Fixed &a, const Fixed &b);
 	static Fixed &max( Fixed &a, Fixed &b);
