@@ -26,9 +26,27 @@ public:
 	
 	
 	Fixed&	operator=(const Fixed &rhs);
-	Fixed
+	Fixed	operator+(const Fixed &rhs) const;
+	Fixed	operator-(const Fixed &rhs) const;
+	Fixed	operator*(const Fixed &rhs) const;
+	Fixed	operator/(const Fixed &rhs) const;
+	bool	operator<(const Fixed &rhs) const;
+	bool	operator>(const Fixed &rhs) const;
+	bool	operator<=(const Fixed &rhs) const;
+	bool	operator>=(const Fixed &rhs) const;
+	bool	operator==(const Fixed &rhs) const;
+	bool	operator!=(const Fixed &rhs) const;
+
+	Fixed&	operator++(void);
+	Fixed	operator++(int);
+	Fixed&	operator--(void);
+	Fixed	operator--(int);
 
 
+ 	static Fixed const &max(const Fixed &a, const Fixed &b);
+	static Fixed const &min(const Fixed &a, const Fixed &b);
+	static Fixed &max( Fixed &a, Fixed &b);
+	static Fixed &min( Fixed &a, Fixed &b);
 
 	int		getRawBits(void) const;
 	void	setRawBits(int const &raw);

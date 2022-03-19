@@ -25,7 +25,7 @@ RM			=	rm -f
 # File Variables
 # =============================================================================
 
-NAME		=	VirguleFlottante
+NAME		=	OverloadingOperator
 HEADER		=   ./
 FOLDER		=	./
 SRC_LIST 	=	Fixed.cpp \
