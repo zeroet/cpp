@@ -38,6 +38,11 @@ Fixed& Fixed::operator=(const Fixed &rhs)
 	return (*this);
 }
 
+// pq on ne retourne pas & quand on fait les operatons +-*/  
+// pendant les operatons, on appelle instance tmp (no name) pour garder le data.
+// si le data va copy dans la resultat par ex ici c'et le 'b', l'instance tmp n/aura plus besoin.
+// mais si on a mis & cela, il doit vivre plus du temps, alors si on copy grand data comme ~~MB etc, c'est pas bon pour le memoire
+
 Fixed Fixed::operator+(const Fixed &rhs) const
 {
 	return (Fixed(this->toFloat() + rhs.toFloat()));
@@ -114,6 +119,7 @@ Fixed	Fixed::operator--(int)
 	return (tmp);
 }
 
+// plus safe
 Fixed const &Fixed::max(const Fixed &a, const Fixed &b)
 {
 	if (a.getRawBits() > b.getRawBits())
