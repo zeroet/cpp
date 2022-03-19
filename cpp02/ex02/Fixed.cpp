@@ -166,7 +166,9 @@ float	Fixed::toFloat(void) const
 
 std::ostream& operator<<( std::ostream &o , Fixed const &rhs)
 {
+	std::cout << COLOUR_Y;
 	o<<rhs.toFloat();
+	std::cout << COLOUR_FIN;
 	return o;
 }
 
