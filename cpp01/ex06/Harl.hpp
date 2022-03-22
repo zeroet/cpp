@@ -1,5 +1,5 @@
-#ifndef KAREN_HPP
-# define KAREN_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
 #include <iostream>
 #include <string>
@@ -10,7 +10,7 @@
 # define COLOUR_B "\033[0;38;5;21m"
 # define COLOUR_FIN "\033[0m"
 
-class Karen {
+class Harl {
 
 private:
 	void	debug(void);
@@ -19,8 +19,8 @@ private:
 	void	error(void);
 
 public:
-	Karen();
-	~Karen();
+	Harl();
+	~Harl();
 
 	void	complain( std::string level );
 };

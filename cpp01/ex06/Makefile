@@ -25,11 +25,11 @@ RM			=	rm -f
 # File Variables
 # =============================================================================
 
-NAME		=	karenFilter
+NAME		=	HarlFilter
 HEADER		=   ./
 FOLDER		=	./
 SRC_LIST 	=	main.cpp \
-				Karen.cpp
+				Harl.cpp
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:.cpp=.o)
 
