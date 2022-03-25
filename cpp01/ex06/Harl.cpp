@@ -1,12 +1,12 @@
-#include "Karen.hpp"
+#include "Harl.hpp"
 
-Karen::Karen() {};
+Harl::Harl() {};
 
-Karen::~Karen() {};
+Harl::~Harl() {};
 
-void	Karen::complain( std::string level )
+void	Harl::complain( std::string level )
 {
-	void	(Karen::*fn[])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
+	void	(Harl::*fn[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	int i(-1);
 	if ("DEBUG"== level)
@@ -34,7 +34,7 @@ void	Karen::complain( std::string level )
 	}
 }
 
-void	Karen::debug(void)
+void	Harl::debug(void)
 {
 	std::cout << COLOUR_Y << 
 		"[ DEBUG ]\n" <<
@@ -42,7 +42,7 @@ void	Karen::debug(void)
 		"I really do !\n" << COLOUR_FIN << std::endl;
 }
 
-void	Karen::info(void)
+void	Harl::info(void)
 {
 	std::cout << COLOUR_G << 
 		"[ INFO ]\n" <<
@@ -50,7 +50,7 @@ void	Karen::info(void)
 		"If you did, I wouldn’t be asking for more !\n" << COLOUR_FIN << std::endl;
 }
 
-void	Karen::warning(void)
+void	Harl::warning(void)
 {
 	std::cout << COLOUR_B << 
 		"[ WARNING ]\n" <<
@@ -58,7 +58,7 @@ void	Karen::warning(void)
 		"I’ve been coming for years whereas you started working here since last month.\n" << COLOUR_FIN << std::endl;
 }
 
-void	Karen::error(void)
+void	Harl::error(void)
 {
 	std::cout << COLOUR_R << 
 		"[ ERROR ]\n" <<

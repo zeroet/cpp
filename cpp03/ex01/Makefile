@@ -25,11 +25,11 @@ RM			=	rm -f
 # File Variables
 # =============================================================================
 
-NAME		=	HarlFilter
+NAME		=	Eeeeet...Action!
 HEADER		=   ./
 FOLDER		=	./
 SRC_LIST 	=	main.cpp \
-				Harl.cpp
+				ClapTrap.cpp
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:.cpp=.o)
 
