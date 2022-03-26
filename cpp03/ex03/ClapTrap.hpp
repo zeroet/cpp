@@ -4,13 +4,13 @@
 #include <iostream>
 #include <string>
 
-# define COLOUR_Y "\033[0;38;5;220m"
-# define COLOUR_G "\033[0;38;5;42m"
-# define COLOUR_R "\033[0;38;5;196m"
-# define COLOUR_B "\033[0;38;5;21m"
-# define COLOUR_P "\033[0;38;5;205m"
-# define COLOUR_BO "\033[0;38;5;93m"
-# define COLOUR_FIN "\033[0m"
+# define YELLOW "\033[0;38;5;220m"
+# define GREEN "\033[0;38;5;42m"
+# define RED "\033[0;38;5;196m"
+# define BLUE "\033[0;38;5;21m"
+# define PINK "\033[0;38;5;205m"
+# define PURPLE "\033[0;38;5;93m"
+# define FIN "\033[0m"
 
 class ClapTrap {
 

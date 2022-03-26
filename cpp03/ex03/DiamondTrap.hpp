@@ -3,13 +3,21 @@
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {
-public:
-
 private:
+	std::string _Name;
 
+public:
+	DiamondTrap();
+	DiamondTrap(std::string name);
+	DiamondTrap(DiamondTrap const  &rhs);
+	DiamondTrap& operator=(DiamondTrap const &rhs);
+	~DiamondTrap(void);
+
+	void	whoAmI();
 };
 
 
