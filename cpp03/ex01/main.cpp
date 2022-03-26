@@ -1,34 +1,38 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main(void)
+int main()
 {
-	ClapTrap playerA("A");
+	std::cout << " == CONSTRUCTORS == " << std::endl;
+	ScavTrap a ("Arnold");
+	ScavTrap b;
+	ScavTrap c ("Warrior");
 
-	ClapTrap playerB(playerA);
-	playerB.attack("John");
-	playerB.attack("John");
-	playerB.attack("John");
-	playerB.attack("John");
-	playerB.attack("John");
-	playerB.attack("John");
-	playerB.attack("John");
-	playerB.beRepaired(400);
-	playerB.attack("John");
-	playerB.attack("John");
-	playerB.takeDamage(400);
-	playerB.attack("John");
-	playerB.attack("John");
-	playerB.beRepaired(10);
-	playerB.attack("John");
-	playerB.attack("John");
-	playerB.takeDamage(11);
-	playerB.beRepaired(10);
+	std::cout << std::endl << " == A ACTIONS == " << std::endl;
+	a.attack("Captain America");
+	a.beRepaired(10);
+	a.takeDamage(3);
+	a.takeDamage(90);
+	a.attack("Hulk");
+	a.beRepaired(10);
+	a.takeDamage(50);
+	a.guardGate();
 
-	ClapTrap playerC("C");
-	playerC.attack("John");
-	playerC.beRepaired( 20 );
-	playerC.getHit();
-	playerC.takeDamage(15);
-	playerC.takeDamage(25);
-	return (0);
-};
+	std::cout << std::endl << " == B ACTIONS == " << std::endl;
+	b.attack("Iron Man");
+	b.takeDamage(90);
+	b.beRepaired(200);
+	b.takeDamage(15);
+	b.attack("Thor");
+	b.guardGate();
+	b.guardGate();
+
+	std::cout << std::endl << " == C ENERGY TEST == " << std::endl;
+	for (int i = 0; i < 51; i++)
+		c.attack("ENERGY TEST");
+	c.guardGate();
+
+	std::cout << std::endl << " == DESTRUCTORS == " << std::endl;
+
+	return(0);
+
+}

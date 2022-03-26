@@ -6,12 +6,11 @@
 /*   By: seyun <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 22:25:51 by seyun             #+#    #+#             */
-/*   Updated: 2022/03/16 21:28:23 by seyun            ###   ########.fr       */
+/*   Updated: 2022/03/26 13:09:29 by seyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cctype>
 
 int main(int ac, char **av)
 {

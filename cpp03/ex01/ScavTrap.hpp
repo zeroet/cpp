@@ -3,21 +3,20 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public Claptrap {
+class ScavTrap : public ClapTrap {
 
 private:
-	std::string _Name;
-	int	_Hit_Point;
-	int _Energy_Point;
-	int _Attack_Point;
+	bool _gate_keeper;
 
 public:
 	ScavTrap(void);
-	ScavTrap(std::string str);
+	ScavTrap(std::string const str);
 	ScavTrap(const ScavTrap &rhs);
-	SacavTrap& operator=(const SacavTrap &rhs);
+	ScavTrap& operator=(const ScavTrap &rhs);
 	~ScavTrap(void);
 
+
+	void	attack( const std::string &target);
 	void	guardGate();
 };
 

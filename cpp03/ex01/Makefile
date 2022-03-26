@@ -17,7 +17,7 @@ LINE_CLEAR	=	"\x1b[1A\x1b[M"
 # Command Variables
 # =============================================================================
 
-CC			=	clang++
+CC			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++98
 RM			=	rm -f
 
@@ -29,7 +29,8 @@ NAME		=	Eeeeet...Action!
 HEADER		=   ./
 FOLDER		=	./
 SRC_LIST 	=	main.cpp \
-				ClapTrap.cpp
+				ClapTrap.cpp \
+				ScavTrap.cpp
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:.cpp=.o)
 

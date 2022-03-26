@@ -6,13 +6,14 @@
 
 # define COLOUR_Y "\033[0;38;5;220m"
 # define COLOUR_G "\033[0;38;5;42m"
-# define COLOUR_R "\033[0;38;5;203m"
+# define COLOUR_R "\033[0;38;5;196m"
 # define COLOUR_B "\033[0;38;5;21m"
+# define COLOUR_P "\033[0;38;5;205m"
 # define COLOUR_FIN "\033[0m"
 
 class ClapTrap {
 
-private:
+protected:
 	std::string _Name;
 	int _Hit_Point;
 	int _Energy_Point;

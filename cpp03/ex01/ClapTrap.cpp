@@ -94,6 +94,8 @@ void	ClapTrap::takeDamage( unsigned int amount )
 	}
 	std::cout << "ClapTrap: " << this->_Name << " take " << amount << " damage" <<std::endl;
 	this->_Hit_Point-= amount;
+	if (this->_Hit_Point < 0)
+		this->_Hit_Point = 0;
 	std::cout << COLOUR_R;
 	if (this->_Hit_Point <= 0)
 		std::cout << "ClapTrap: " << this->_Name << " died" << std::endl;

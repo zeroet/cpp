@@ -17,7 +17,7 @@ LINE_CLEAR	=	"\x1b[1A\x1b[M"
 # Command Variables
 # =============================================================================
 
-CC			=	clang++
+CC			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++98
 RM			=	rm -f
 
@@ -25,11 +25,12 @@ RM			=	rm -f
 # File Variables
 # =============================================================================
 
-NAME		=	Karen
+NAME		=	Harl
+
 HEADER		=   ./
 FOLDER		=	./
 SRC_LIST 	=	main.cpp \
-				Karen.cpp
+				Harl.cpp
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:.cpp=.o)
 

@@ -1,12 +1,12 @@
-#include "Karen.hpp"
+#include "Harl.hpp"
 
-Karen::Karen() {};
+Harl::Harl() {};
 
-Karen::~Karen() {};
+Harl::~Harl() {};
 
-void	Karen::complain( std::string level )
+void	Harl::complain( std::string level )
 {
-	void	(Karen::*fn[4])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
+	void	(Harl::*fn[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	std::string complain_str[4] = {"debug", "info", "warning", "error"};
 
@@ -20,22 +20,22 @@ void	Karen::complain( std::string level )
 	}
 }
 
-void	Karen::debug(void)
+void	Harl::debug(void)
 {
 	std::cout << COLOUR_Y << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do !" << COLOUR_FIN << std::endl;
 }
 
-void	Karen::info(void)
+void	Harl::info(void)
 {
 	std::cout << COLOUR_G << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger ! If you did, I wouldn’t be asking for more !" << COLOUR_FIN << std::endl;
 }
 
-void	Karen::warning(void)
+void	Harl::warning(void)
 {
 	std::cout << COLOUR_B << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << COLOUR_FIN << std::endl;
 }
 
-void	Karen::error(void)
+void	Harl::error(void)
 {
 	std::cout << COLOUR_R << "This is unacceptable ! I want to speak to the manager now." << COLOUR_FIN << std::endl;
 }
