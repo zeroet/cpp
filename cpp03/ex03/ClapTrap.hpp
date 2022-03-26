@@ -31,6 +31,7 @@ public:
 	void	takeDamage( unsigned int amount );
 	void	beRepaired( unsigned int amout );
 	
+	void	setHit(int num);
 	int	getHit() const;
 	int	getEnergy() const;
 	int	getAttack() const;

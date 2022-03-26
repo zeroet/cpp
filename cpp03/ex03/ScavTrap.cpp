@@ -2,7 +2,7 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	_Hit_Point = 100;
+	_Hit_Point = 200;
 	_Energy_Point = 50;
 	_Attack_Point = 20;
 	_gate_keeper = false;
