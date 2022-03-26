@@ -25,7 +25,7 @@ RM			=	rm -f
 # File Variables
 # =============================================================================
 
-NAME		=	Eeeeet...Action!
+NAME		=	Travail_à_la_chaîne
 HEADER		=   ./
 FOLDER		=	./
 SRC_LIST 	=	main.cpp \

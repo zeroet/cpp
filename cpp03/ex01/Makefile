@@ -25,7 +25,7 @@ RM			=	rm -f
 # File Variables
 # =============================================================================
 
-NAME		=	Eeeeet...Action!
+NAME		=	Serena_mon_amour!
 HEADER		=   ./
 FOLDER		=	./
 SRC_LIST 	=	main.cpp \
