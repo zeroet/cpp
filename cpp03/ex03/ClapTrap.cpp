@@ -1,11 +1,7 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap(void) : _Name("Unknown"), _Hit_Point(10), _Energy_Point(10), _Attack_Point(0)
 {
-	this->_Name = "Unknown";
-	this->_Hit_Point = 10;
-	this->_Energy_Point = 10;
-	this->_Attack_Point = 0;
 	std::cout << YELLOW;
 	std::cout << "ClapTrap: " << "Player " << this->_Name << " created" << std::endl;
 	std::cout << FIN;
@@ -66,9 +62,15 @@ int	ClapTrap::getAttack() const
 	return (this->_Attack_Point);
 };
 
+<<<<<<< HEAD
 void	ClapTrap::setEnergy(int num)
 {
 	this->_Energy_Point = num;
+=======
+void	ClapTrap::setHit(int num)
+{
+	this->_Hit_Point = num;
+>>>>>>> 6001177debe56e3d92119c25671de0bc67de911f
 };
 
 void	ClapTrap::attack( const std::string &target)

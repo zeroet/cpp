@@ -20,5 +20,4 @@ public:
 	void	whoAmI();
 };
 
-
 #endif
