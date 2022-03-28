@@ -32,12 +32,7 @@ public:
 	void	takeDamage( unsigned int amount );
 	void	beRepaired( unsigned int amout );
 	
-<<<<<<< HEAD
-	void setEnergy(int num);
 	
-=======
-	void	setHit(int num);
->>>>>>> 6001177debe56e3d92119c25671de0bc67de911f
 	int	getHit() const;
 	int	getEnergy() const;
 	int	getAttack() const;

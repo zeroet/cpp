@@ -2,17 +2,10 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
-<<<<<<< HEAD
 	this->_Hit_Point = 100;
 	this->_Energy_Point = 50;
 	this->_Attack_Point = 20;
 	this->_gate_keeper = false;
-=======
-	_Hit_Point = 200;
-	_Energy_Point = 50;
-	_Attack_Point = 20;
-	_gate_keeper = false;
->>>>>>> 6001177debe56e3d92119c25671de0bc67de911f
 	std::cout << YELLOW;
 	std::cout << "[ScavTrap]: " << "Player " << this->_Name << " created" << std::endl;
 	std::cout << FIN;
