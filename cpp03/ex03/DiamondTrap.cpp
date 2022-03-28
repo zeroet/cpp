@@ -1,10 +1,11 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
 {
 	_Name = "Unkwown";
 	std::cout << YELLOW;
 	std::cout << "#DiamondTrap#: " << "Player " << this->_Name << " created" << std::endl;
+	_Energy_Point = ScavTrap::_Energy_Point;
 	std::cout << FIN;
 };
 
