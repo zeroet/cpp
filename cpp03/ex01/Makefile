@@ -17,8 +17,8 @@ LINE_CLEAR	=	"\x1b[1A\x1b[M"
 # Command Variables
 # =============================================================================
 
-CC			=	c++
-CFLAGS		=	-Wall -Werror -Wextra -std=c++98
+CXX			=	c++
+CXXFLAGS		=	-Wall -Werror -Wextra -std=c++98
 RM			=	rm -f
 
 # =============================================================================
@@ -40,12 +40,12 @@ OBJ			=	$(SRC:.cpp=.o)
 
 %.o			:	%.cpp
 				@echo $(YELLOW) "Compiling...\t" $< $(EOC) $(LINE_CLEAR)
-				@$(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
+				@$(CXX) $(CXXFLAGS) -I $(HEADER) -o $@ -c $<
 
 $(NAME)		:	$(OBJ)
 				@echo $(GREEN) "Source files are compiled!\n" $(EOC)
 				@echo $(WHITE) "Building $(NAME) for" $(YELLOW) "Mandatory" $(WHITE) "..." $(EOC)
-				@$(CC) $(CFLAGS) -I $(HEADER) -o $(NAME) $(OBJ)
+				@$(CXX) $(CXXFLAGS) -I $(HEADER) -o $(NAME) $(OBJ)
 				@echo $(GREEN) "$(NAME) is created!\n" $(EOC)
 
 # =============================================================================

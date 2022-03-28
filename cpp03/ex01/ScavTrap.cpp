@@ -2,7 +2,6 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	this->_Name = "Unknown";
 	this->_Hit_Point = 100;
 	this->_Energy_Point = 50;
 	this->_Attack_Point = 20;
@@ -36,7 +35,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &rhs)
 	std::cout << COLOUR_Y;
 	std::cout << "[SacavTrap]: assignement operator called" << std::endl;
 	std::cout << COLOUR_FIN;
-	this->_Name = rhs._Name;
 	this->_Hit_Point = rhs._Hit_Point;
 	this->_Energy_Point = rhs._Energy_Point;
 	this->_Attack_Point = rhs._Attack_Point;

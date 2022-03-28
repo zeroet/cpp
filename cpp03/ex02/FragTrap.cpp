@@ -2,7 +2,6 @@
 
 FragTrap::FragTrap(void) : ClapTrap()
 {
-	this->_Name = "Unknown";
 	this->_Hit_Point = 100;
 	this->_Energy_Point = 100;
 	this->_Attack_Point = 30;
@@ -13,7 +12,6 @@ FragTrap::FragTrap(void) : ClapTrap()
 
 FragTrap::FragTrap(std::string const str) : ClapTrap(str)
 {
-	this->_Name	= str;
 	this->_Hit_Point = 100;
 	this->_Energy_Point = 100;
 	this->_Attack_Point = 30;
@@ -32,7 +30,7 @@ FragTrap::FragTrap(FragTrap const &rhs)
 
 FragTrap& FragTrap::operator=(FragTrap const &rhs)
 {
-	this->_Name = rhs._Name;
+//	this->_Name = rhs._Name;
 	this->_Hit_Point = rhs._Hit_Point;
 	this->_Energy_Point = rhs._Energy_Point;
 	this->_Attack_Point = rhs._Attack_Point;

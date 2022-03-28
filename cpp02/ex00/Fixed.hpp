@@ -13,15 +13,12 @@ public:
 	Fixed();			//canonical
 	~Fixed();			//canonical
 	Fixed(Fixed const &rhs);
+	Fixed &  operator=( Fixed const &rhs); //canonical    fonc name is "operator="   Fixed& is type! 
 
 	
 	int	getRawBits( void ) const;
 	void setRawBits( int const raw );
-
-	Fixed &  operator=( Fixed const &rhs); //canonical    fonc name is "operator="   Fixed& is type! 
-	
-	operator int(void);
-
+//	operator int(void);
 };
 
 //std::ostream & operator<<( std::ostream & o , Fixed const & i);

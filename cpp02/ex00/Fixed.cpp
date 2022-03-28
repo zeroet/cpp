@@ -12,7 +12,7 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &rhs) // on ne peux plus jamais changer les memebre value comme _fixe meme si on utlise function set
+Fixed::Fixed(Fixed const &rhs)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	//rhs.setRawBits(10); // si j'ai pas mis le const dans le parametre, ici je peux changer _fixe value
