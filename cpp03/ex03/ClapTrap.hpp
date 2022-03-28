@@ -10,6 +10,7 @@
 # define BLUE "\033[0;38;5;21m"
 # define PINK "\033[0;38;5;205m"
 # define PURPLE "\033[0;38;5;93m"
+# define ORANGE "\033[38;5;202m"
 # define FIN "\033[0m"
 
 class ClapTrap {
@@ -30,6 +31,8 @@ public:
 	void	attack( const std::string &target );
 	void	takeDamage( unsigned int amount );
 	void	beRepaired( unsigned int amout );
+	
+	void setEnergy(int num);
 	
 	int	getHit() const;
 	int	getEnergy() const;

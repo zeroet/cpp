@@ -4,16 +4,13 @@
 
 int	main(void)
 {
-	DiamondTrap	a;
+	DiamondTrap	a("hi");
 
 	std::cout << std::endl;
 	a.whoAmI();
-	std::cout << a.getHit() << std::endl;
-	std::cout << a.getEnergy() << std::endl;
-	std::cout << a.getAttack() <<std::endl;
 	std::cout << std::endl;
 	
-/*	{
+	{
 		DiamondTrap b("B");
 		DiamondTrap c("C");
 
@@ -57,7 +54,7 @@ int	main(void)
 	
 	d.whoAmI();
 	
-	std::cout << std::endl;*/
+	std::cout << std::endl;
 	return (0);
 }
 

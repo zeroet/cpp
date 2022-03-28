@@ -2,10 +2,10 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	_Hit_Point = 100;
-	_Energy_Point = 50;
-	_Attack_Point = 20;
-	_gate_keeper = false;
+	this->_Hit_Point = 100;
+	this->_Energy_Point = 50;
+	this->_Attack_Point = 20;
+	this->_gate_keeper = false;
 	std::cout << YELLOW;
 	std::cout << "[ScavTrap]: " << "Player " << this->_Name << " created" << std::endl;
 	std::cout << FIN;
@@ -13,10 +13,10 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 
 ScavTrap::ScavTrap(std::string const str) : ClapTrap(str) 
 {
-	_Hit_Point = 100;
-	_Energy_Point = 50;
-	_Attack_Point = 20;
-	_gate_keeper = false;
+	this->_Hit_Point = 100;
+	this->_Energy_Point = 50;
+	this->_Attack_Point = 20;
+	this->_gate_keeper = false;
 	std::cout << YELLOW;
 	std::cout << "[ScavTrap] " << "Player " << this->_Name << " created" << std::endl;
 	std::cout << FIN;

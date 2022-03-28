@@ -66,6 +66,10 @@ int	ClapTrap::getAttack() const
 	return (this->_Attack_Point);
 };
 
+void	ClapTrap::setEnergy(int num)
+{
+	this->_Energy_Point = num;
+};
 
 void	ClapTrap::attack( const std::string &target)
 {

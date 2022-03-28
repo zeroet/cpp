@@ -1,23 +1,18 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : _Name("Unknwon")
+DiamondTrap::DiamondTrap()
 {
+	_Name = "Unkwown";
 	std::cout << YELLOW;
 	std::cout << "#DiamondTrap#: " << "Player " << this->_Name << " created" << std::endl;
 	std::cout << FIN;
-	_Hit_Point = FragTrap::_Hit_Point;
-	ScavTrap::getEnergy();
-	_Attack_Point = FragTrap::_Attack_Point;
+
 };
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
 {
 	std::cout << YELLOW;
 	this->_Name = name;
-	_Hit_Point = FragTrap::_Hit_Point;
-	_Energy_Point =  ScavTrap::_Energy_Point;
-	_Attack_Point =  FragTrap::_Attack_Point;
-
 	std::cout << "#DiamondTrap#: " << "Player " << this->_Name << " created" << std::endl;
 
 	std::cout << FIN;
@@ -49,5 +44,5 @@ DiamondTrap::~DiamondTrap(void)
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << this->_Name << ": DiamondTrap Name" << std::endl;
+	std::cout << ORANGE << this->_Name << " is DiamondTrap Name and ClapTrap Name is : " << ClapTrap::_Name<< FIN << std::endl;
 };

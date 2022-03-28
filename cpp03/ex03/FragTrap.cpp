@@ -2,9 +2,9 @@
 
 FragTrap::FragTrap(void) : ClapTrap()
 {
-	_Hit_Point = 100;
-	_Energy_Point = 100;
-	_Attack_Point = 30;
+	this->_Hit_Point = 100;
+	this->_Energy_Point = 100;
+	this->_Attack_Point = 30;
 	std::cout << YELLOW;
 	std::cout << "*FragTrap*: " << "Player " << this->_Name << " created" << std::endl;
 	std::cout << FIN;
@@ -12,9 +12,9 @@ FragTrap::FragTrap(void) : ClapTrap()
 
 FragTrap::FragTrap(std::string const str) : ClapTrap(str)
 {
-	_Hit_Point = 100;
-	_Energy_Point = 100;
-	_Attack_Point = 30;
+	this->_Hit_Point = 100;
+	this->_Energy_Point = 100;
+	this->_Attack_Point = 30;
 	std::cout << YELLOW;
 	std::cout << "*FragTrap*: " << "Player " << this->_Name << " created" << std::endl;
 	std::cout << FIN;
