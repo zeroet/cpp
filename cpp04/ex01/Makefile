@@ -33,7 +33,8 @@ SRC_LIST 	=	main.cpp \
 				Cat.cpp \
 				Dog.cpp \
 				WrongAnimal.cpp \
-				WrongCat.cpp
+				WrongCat.cpp \
+				Brain.cpp
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:.cpp=.o)
 

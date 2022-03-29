@@ -3,12 +3,15 @@
 Cat::Cat()
 {
 	this->_Type = "Cat";
-	std::cout << YELLOW << "[Cat] Constructor called" << FIN << std::endl;
+	_Brain = new Brain();
+	std::cout << PURPLE << "[Cat] Constructor called" << FIN << std::endl;
+	//_Brain = new Brain();
 };
 
 Cat::~Cat()
 {
-	std::cout << YELLOW << "[Cat] Destructor called" << FIN << std::endl;
+	delete _Brain;
+	std::cout << PURPLE << "[Cat] Destructor called" << FIN << std::endl;
 };
 
 Cat::Cat(Cat const &rhs)
@@ -20,6 +23,7 @@ Cat::Cat(Cat const &rhs)
 Cat &Cat::operator=(Cat const  &rhs)
 {
 	this->_Type = rhs._Type;
+	*(this->_Brain) = *(rhs._Brain);
 	std::cout << YELLOW << "[Cat] assignement fnc called" << FIN << std::endl;
 	return (*this);
 };

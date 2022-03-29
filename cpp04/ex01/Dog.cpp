@@ -3,17 +3,20 @@
 Dog::Dog()
 {
 	this->_Type = "Dog";
-	std::cout << YELLOW << "[Dog] Constructor called" << FIN << std::endl;
+	_Brain = new Brain();
+	std::cout << PINK << "[Dog] Constructor called" << FIN << std::endl;
 };
 
 Dog::~Dog()
 {
-	std::cout << YELLOW << "[Dog] Destructor called" << FIN << std::endl;
+	delete _Brain;
+	std::cout << PINK << "[Dog] Destructor called" << FIN << std::endl;
 };
 
 Dog &Dog::operator=(Dog const &rhs)
 {
 	this->_Type = rhs._Type;
+	*(this->_Brain) = *(rhs._Brain);
 	std::cout << YELLOW << "[Dog] assignement fnc called" << FIN << std::endl;
 	return *this;
 };

@@ -6,37 +6,51 @@
 
 int main(void)
 {
-	Animal* a = new Animal;
-	Animal* b = new Cat;
-	Animal *c = new Dog;
-
-	std::cout << a->getType() << " " << std::endl;
-	std::cout << b->getType() << " " << std::endl;
-	std::cout << c->getType() << " " << std::endl;
 	
-	a->makeSound();
-	b->makeSound();
-	c->makeSound();
+	std::cout << std::endl;
+	std::cout << "========== Constructor Test ==========" << std::endl;
 
-	delete a;
-	delete b;
-	delete c;
+	Animal *animal[10];
+
+	for (int i= 0; i < 10; i++)
+	{
+		if (i < 5)
+			animal[i] = new Cat;
+		else
+		{
+			if (i == 5)
+				std::cout << std::endl;
+			animal[i] = new Dog;
+		}
+	};
 
 	std::cout << std::endl;
-	std::cout << "============ Wrong Animal ================" << std::endl;
 	std::cout << std::endl;
- 
-	WrongAnimal *d = new WrongAnimal;
-	WrongAnimal *e = new WrongCat;
+	std::cout << std::endl;
+	std::cout << "========== Destructor Test ==========" << std::endl;
 
-	std::cout << d->getType() << " " << std::endl;
-	std::cout << e->getType() << " " << std::endl;
-	
-	d->makeSound();
-	e->makeSound();
 
-	delete d;
-	delete e;
+	for (int i = 0; i < 10; i++)
+	{
+		if (i == 5)
+			std::cout << std::endl;
+		delete animal[i];
+	}
 
+	return (0);
+
+/*
+	Brain f;
+	Brain *g = new Brain();
+
+	for (int i = 0; i < 5; i++)
+		f.setBrain(i, "HI");
+	for (int i = 0; i < 5; i++)
+		std::cout << f.getBrain(i) << std::endl;
+
+	g = &f;
+	for (int i = 0; i < 5; i++)
+		std::cout << g->getBrain(i) << std::endl;
+*/
 
 };
