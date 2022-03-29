@@ -2,12 +2,17 @@
 
 Animal::Animal() :_Type("Animal")
 {
-	std::cout << YELLOW << "[Animal] Constructor" << FIN << std::endl;
+	std::cout << YELLOW << "[Animal] Constructor called" << FIN << std::endl;
 };
+
+//Animal::Animal(std::string str)
+//{
+//	std::cout << YELLOW << "[Animal] Constructor called" << FIN << std::endl;
+//};
 
 Animal::~Animal()
 {
-	std::cout << YELLOW << "[Animal] Destrutor" << FIN << std::endl;
+	std::cout << YELLOW << "[Animal] Destrutor called" << FIN << std::endl;
 };
 
 Animal::Animal(Animal const &rhs)
@@ -28,8 +33,7 @@ std::string Animal::getType() const
 	return (this->_Type);
 };
 
-void	Animal::makeSound()
+void	Animal::makeSound() const
 {
-	std::cout << GREEN << "[Animal] make sound fnc ----------------" << FIN << std::endl;
+	std::cout << GREEN << "[Animal] make sound fnc ----------" << FIN << std::endl;
 };
-
