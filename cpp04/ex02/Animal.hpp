@@ -13,6 +13,7 @@
 # define ORANGE "\033[38;5;202m"
 # define FIN "\033[0m"
 
+// si je veux vraiment utilser class abstraite, Sauf le Constructor, faites tout les fonction dans le class un fonction  vrai abstraite. Enfin il a l'air vraiment comme une Interface en cpp 
 
 class Animal 
 {
