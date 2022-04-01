@@ -17,7 +17,7 @@ class Form
 		Form(Form const &rhs);
 		Form &operator=(Form const &rhs);
 		
-
+		
 };
 
 #endif
