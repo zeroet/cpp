@@ -16,6 +16,7 @@ Cat::~Cat()
 
 Cat::Cat(Cat const &rhs)
 {
+	_Brain = new Brain();
 	*this = rhs;
 	std::cout << YELLOW << "[Cat] copy Constructor called" << FIN << std::endl;
 };

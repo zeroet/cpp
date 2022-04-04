@@ -10,6 +10,12 @@ int main(void)
 	std::cout << std::endl;
 	std::cout << "========== Constructor Test ==========" << std::endl;
 
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
+
+
 	Animal *animal[10];
 
 	for (int i= 0; i < 10; i++)

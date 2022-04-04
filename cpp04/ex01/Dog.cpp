@@ -23,6 +23,7 @@ Dog &Dog::operator=(Dog const &rhs)
 
 Dog::Dog(Dog const  &rhs)
 {
+	_Brain = new Brain();
 	*this = rhs;
 	std::cout << YELLOW << "[Dog] copy Constructor called" << FIN << std::endl;
 };
