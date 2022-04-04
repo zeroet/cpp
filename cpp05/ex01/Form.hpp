@@ -3,6 +3,8 @@
 
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 	private:
@@ -12,26 +14,27 @@ class Form
 		bool _F_Sign;
 
 	public:
-		Form(const std::string str, const int Signal, const int Executer);
+		Form();
+		Form(const std::string &str, const int &Signal, const int &Executer);
 		~Form();
 		Form(Form const &rhs);
 		Form &operator=(Form const &rhs);
 
 		const std::string getName() const;
-		const int getSignal() const;
-		const int getExecuter() const;
-		const bool getSign() const;
+		int getSignal() const;
+		int getExecuter() const;
+		bool getSign() const;
 
 
-		void	beSigned(const bureaucrat &rhs);
-		signForm();
+		void	beSigned(const Bureaucrat &rhs);
 
-		class	GradeTooHighException() : public std::exception
+		class	GradeTooHighException : public std::exception
 		{
 			public:
 				const char *what(void) const throw();
 		};
-		class	GradeTooLowExcpetion() : public std::exception
+	
+		class	GradeTooLowExcpetion : public std::exception
 		{
 			public:
 				const char *what(void) const throw();

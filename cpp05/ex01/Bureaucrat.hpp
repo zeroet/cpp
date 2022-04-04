@@ -5,6 +5,7 @@
 #include <iostream>
 #include <exception>
 
+#include "Form.hpp"
 
 # define YELLOW "\033[0;38;5;220m"
 # define GREEN "\033[0;38;5;42m"
@@ -15,6 +16,7 @@
 # define ORANGE "\033[38;5;202m"
 # define FIN "\033[0m"
 
+class Form;
 
 class Bureaucrat
 {
@@ -32,7 +34,7 @@ class Bureaucrat
 		void	incrementGrade(void);
 		void	decrementGrade(void);
 
-		
+		void	signForm(Form &rhs) const;
 
 		const std::string getName() const;
 		int getGrade() const;

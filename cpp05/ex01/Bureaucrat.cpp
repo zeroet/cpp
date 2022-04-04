@@ -2,7 +2,7 @@
 
 std::ostream& operator<<(std::ostream &o, Bureaucrat const &rhs)
 {
-	o<< PURPLE << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << FIN;
+	o<< PURPLE << "Bureaucrat : " <<  rhs.getName() << ", grade is " << rhs.getGrade() << FIN;
 	return o;
 }
 
@@ -83,8 +83,16 @@ int	Bureaucrat::getGrade() const
 	return (this->_Grade);
 };
 
-void	Bureaucrat::signForm(Form &rhs)
+void	Bureaucrat::signForm(Form &rhs) const
 {
-	if (getGrade() > rhs.getSignal())
-		
+	try
+	{
+		rhs.beSigned(*this);
+		std::cout << ORANGE << _Name << " signed " << rhs.getName() << FIN << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << _Name << " couldn't sign " << rhs.getName() << " because " << e.what() << FIN << std::endl;
+	}
+}
 

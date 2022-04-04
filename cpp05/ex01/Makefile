@@ -29,7 +29,8 @@ NAME		=	Bureaucrat
 HEADER		=   ./
 FOLDER		=	./
 SRC_LIST 	=	main.cpp \
-				Bureaucrat.cpp
+				Bureaucrat.cpp \
+				Form.cpp
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:.cpp=.o)
 

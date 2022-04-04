@@ -1,85 +1,57 @@
+
+#include <iostream>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int main(void)
+int main (void)
 {
-	std::cout << "Test Normal" << std::endl;
+	std::cout << "================== sign no =========================" << std::endl;
 	std::cout << std::endl;
 
-	Bureaucrat test("test", 42);
-	std::cout << test << std::endl;
+	Bureaucrat A("Thor", 100);
+	Form B("Odin", 10, 120);
 
+	std::cout << A << std::endl;
 
-	std::cout << std::endl;
-	std::cout << FIN << "Input Grade 0 test" << std::endl;
-	std::cout << std::endl;
-	try
-	{	
-		Bureaucrat a("a", 0);
-
-	}
-	catch(const std::exception &e)
-	{	
-		std::cerr << e.what() << std::endl;
-	}
-
-	std::cout << std::endl;
-	std::cout << FIN << "Input Grade 151 test" << std::endl;
-	std::cout << std::endl;
-
-	try
-	{
-		Bureaucrat b("b", 151);
-	}
-	catch(std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
-	std::cout << "Input Grade 42 test" << std::endl;
-	std::cout << std::endl;
+	std::cout << B << std::endl;
 	
+	A.signForm(B);
+
+
+	std::cout << std::endl;
+	std::cout << "================== sign ok =========================" << std::endl;
+	std::cout << std::endl;
+
+
+	Bureaucrat C("Loki", 1);
+	Form D("Valkyrie", 3, 10);
+
+	std::cout << C << std::endl;
+	std::cout << D << std::endl;
+
+	C.signForm(D);
+
+
+	std::cout << std::endl;
+	std::cout << "================== increment Loki +3 =========================" << std::endl;
+	std::cout << std::endl;
+
 
 	try
 	{
-		Bureaucrat c("c", 42);
+		C.decrementGrade();
+		C.decrementGrade();
+		C.decrementGrade();
+		std::cout << C << std::endl;
+		C.signForm(D);
 	}
 	catch(std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-
 	std::cout << std::endl;
-	std::cout << "Increment test" << std::endl;
 	std::cout << std::endl;
-	try
-	{
-		Bureaucrat d("d", 10);
-		std::cout << d << std::endl;
-		for (int i = 0; i < 11; i++)
-			d.incrementGrade();
-	}
-	catch(std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
 	std::cout << std::endl;
-	std::cout << "Decrement test" << std::endl;
-	std::cout << std::endl;
-	
-	try
-	{
-		Bureaucrat e("e", 140);
-		std::cout << e << std::endl;
-		for (int i = 0; i < 11; i++)
-			e.decrementGrade();
-	}
-	catch(std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
-	std::cout << FIN << "Program normal" << std::endl;
-
-	return (0);
 }
+
+
