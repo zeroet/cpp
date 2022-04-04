@@ -83,4 +83,8 @@ int	Bureaucrat::getGrade() const
 	return (this->_Grade);
 };
 
+void	Bureaucrat::signForm(Form &rhs)
+{
+	if (getGrade() > rhs.getSignal())
+		
 
