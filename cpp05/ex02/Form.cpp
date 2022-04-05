@@ -2,7 +2,7 @@
 
 std::ostream & operator<<(std::ostream &o , Form const &rhs)
 {
-	o << PURPLE << "Form : " << rhs.getName() << ", grade is " << rhs.getSignal() << ", garde is " << rhs.getExecuter() <<
+	o << PURPLE << "Form : " << rhs.getName() << ", Sign grade is " << rhs.getSignal() << ", Execute garde is " << rhs.getExecuter() <<
 		", Sign is " << rhs.getSign() << FIN << std::endl;
 	return o;
 }
@@ -82,9 +82,7 @@ bool Form::getSign() const
 void	Form::execute(Bureaucrat const & executor) const
 {
 	(void)executor;
-	//if (_F_Sign == true)
-//		std::cout << executor.getName() << " executed " << executor.getName() << std::endl;
-//	else
-//		throw Form::GradeTooLowException();
+	if (execute.Sign
+
 }
 

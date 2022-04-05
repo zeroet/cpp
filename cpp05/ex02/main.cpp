@@ -11,7 +11,7 @@ int main (void)
 
 	Form *d = new ShrubberyCreationForm("str");
 	Bureaucrat b("Odin", 100);
-	Bureaucrat c("Thor", 138);
+	Bureaucrat c("Thor", 137);
 	Bureaucrat a("Loki", 146);
 
 	std::cout << b << std::endl;
