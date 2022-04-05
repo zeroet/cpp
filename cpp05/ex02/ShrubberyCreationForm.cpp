@@ -24,8 +24,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &rhs) :
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)
 {
-	if (this != &rhs)
-		_Target = rhs.getTarget();
+	_Target = rhs.getTarget();
 	return (*this);
 }
 
@@ -36,8 +35,7 @@ std::string ShrubberyCreationForm::getTarget() const
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & execute) const
 {
-	if (EXEC_GRADE <= execute.getGrade())
-		throw Form::GradeTooLowException();
+	Form::execute(execute);
 	std::string fileName = getTarget() + "_shrubbery";
 	std::ofstream shrubberyFile (fileName);
 	shrubberyFile  

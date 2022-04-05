@@ -81,8 +81,7 @@ bool Form::getSign() const
 
 void	Form::execute(Bureaucrat const & executor) const
 {
-	(void)executor;
-	if (execute.Sign
-
+	if (getExecuter() < executor.getGrade())
+		throw Form::GradeTooLowException();
 }
 
