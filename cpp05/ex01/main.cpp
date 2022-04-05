@@ -33,7 +33,7 @@ int main (void)
 
 
 	std::cout << std::endl;
-	std::cout << "================== increment Loki +3 =========================" << std::endl;
+	std::cout << "================== decrement Loki +3 =========================" << std::endl;
 	std::cout << std::endl;
 
 

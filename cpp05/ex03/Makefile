@@ -18,14 +18,14 @@ LINE_CLEAR	=	"\x1b[1A\x1b[M"
 # =============================================================================
 
 CXX			=	c++
-CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
+CXXFLAGS	= 	-Wall -Werror -Wextra -std=c++98
 RM			=	rm -f
 
 # =============================================================================
 # File Variables
 # =============================================================================
 
-NAME		=	28B_28C
+NAME		=	Intern
 HEADER		=   ./
 FOLDER		=	./
 SRC_LIST 	=	main.cpp \
@@ -33,7 +33,8 @@ SRC_LIST 	=	main.cpp \
 				Form.cpp \
 				ShrubberyCreationForm.cpp \
 				RobotomyRequestForm.cpp \
-				PresidentialPardonForm.cpp
+				PresidentialPardonForm.cpp \
+				Intern.cpp
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:.cpp=.o)
 
