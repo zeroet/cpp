@@ -18,7 +18,7 @@ const char * Form::GradeTooHighException::what(void) const throw()
 	return ("Grade is too High");
 }
 
-const char * Form::GradeTooLowExcpetion::what(void) const throw()
+const char * Form::GradeTooLowException::what(void) const throw()
 {
 	std::cout << RED;
 	return ("Grade is too Low");
@@ -29,7 +29,7 @@ Form::Form(const std::string &str, const int &Signal, const int &Executer) : _F_
 	if (_F_Signal < 1 || _F_Executer < 1)
 		throw Form::GradeTooHighException();
 	if (_F_Signal > 150 || _F_Executer > 150)
-		throw Form::GradeTooLowExcpetion();
+		throw Form::GradeTooLowException();
 	std::cout << YELLOW << "Form : Constructor called" << FIN << std::endl;
 }
 
@@ -47,7 +47,6 @@ Form::Form(Form const &rhs)
 
 Form & Form::operator=(Form const &rhs) 
 {
-	if (this != &rhs)
 		_F_Sign = rhs._F_Sign;
 	std::cout << YELLOW << "Form : assignement operator called" << FIN << std::endl;
 	return *this;
@@ -56,7 +55,7 @@ Form & Form::operator=(Form const &rhs)
 void Form::beSigned(Bureaucrat const  &rhs)
 {
 	if (rhs.getGrade() > this->_F_Signal)
-		throw Form::GradeTooLowExcpetion();
+		throw Form::GradeTooLowException();
 	_F_Sign = true;
 }
 
@@ -79,3 +78,13 @@ bool Form::getSign() const
 {
 	return(this->_F_Sign);
 }
+
+void	Form::execute(Bureaucrat const & executor) const
+{
+	(void)executor;
+	//if (_F_Sign == true)
+//		std::cout << executor.getName() << " executed " << executor.getName() << std::endl;
+//	else
+//		throw Form::GradeTooLowException();
+}
+

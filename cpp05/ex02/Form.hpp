@@ -16,10 +16,11 @@ class Form
 	public:
 		Form();
 		Form(const std::string &str, const int &Signal, const int &Executer);
-		~Form();
+		virtual	~Form();
 		Form(Form const &rhs);
 		Form &operator=(Form const &rhs);
-
+	
+		virtual void execute(Bureaucrat const & executor) const = 0;
 		const std::string getName() const;
 		int getSignal() const;
 		int getExecuter() const;
@@ -34,7 +35,7 @@ class Form
 				const char *what(void) const throw();
 		};
 	
-		class	GradeTooLowExcpetion : public std::exception
+		class	GradeTooLowException : public std::exception
 		{
 			public:
 				const char *what(void) const throw();

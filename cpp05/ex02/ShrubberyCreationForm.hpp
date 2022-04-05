@@ -11,6 +11,7 @@
 #define EXEC_GRADE 137
 #define TYPE "ShrubberyCreationForm"
 
+
 class ShrubberyCreationForm : public Form 
 {
 	private:
@@ -19,12 +20,12 @@ class ShrubberyCreationForm : public Form
 	public:
 		ShrubberyCreationForm();
 		~ShrubberyCreationForm();
+		ShrubberyCreationForm(const std::string &target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &rhs);
-		ShrubberyCreationForm(std::string &target);
 		ShrubberyCreationForm & operator=(const ShrubberyCreationForm &rhs);
 
 		std::string getTarget() const;
-		void	executeAction() const;
+		virtual void execute(Bureaucrat const & execute) const;
 };
 
 #endif

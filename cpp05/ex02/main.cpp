@@ -2,56 +2,45 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main (void)
 {
-	std::cout << "================== sign no =========================" << std::endl;
-	std::cout << std::endl;
-
-	Bureaucrat A("Thor", 100);
-	Form B("Odin", 10, 120);
-
-	std::cout << A << std::endl;
-
-	std::cout << B << std::endl;
 	
-	A.signForm(B);
+	std::cout << "====================ShrubberyCreationForm================" << std::endl;
 
+	Form *d = new ShrubberyCreationForm("str");
+	Bureaucrat b("Odin", 100);
+	Bureaucrat c("Thor", 138);
+	Bureaucrat a("Loki", 146);
 
-	std::cout << std::endl;
-	std::cout << "================== sign ok =========================" << std::endl;
-	std::cout << std::endl;
-
-
-	Bureaucrat C("Loki", 1);
-	Form D("Valkyrie", 3, 10);
-
-	std::cout << C << std::endl;
-	std::cout << D << std::endl;
-
-	C.signForm(D);
-
+	std::cout << b << std::endl;
+	std::cout << c << std::endl;
+	std::cout << *d;
 
 	std::cout << std::endl;
-	std::cout << "================== decrement Loki +3 =========================" << std::endl;
+	std::cout << "--------------------execute test---------------" << std::endl;
 	std::cout << std::endl;
+	b.executeForm(*d);
+	std::cout << std::endl;
+	c.executeForm(*d);
+	std::cout << std::endl;
+	a.executeForm(*d);
+	std::cout << std::endl;
+	
+	std::cout << std::endl;
+	std::cout << "--------------------sign test---------------" << std::endl;
+	std::cout << std::endl;
+	a.signForm(*d);
+	std::cout << *d;
+	b.signForm(*d);
+	std::cout << *d;
+	c.signForm(*d);
+	std::cout << *d;
 
-
-	try
-	{
-		C.decrementGrade();
-		C.decrementGrade();
-		C.decrementGrade();
-		std::cout << C << std::endl;
-		C.signForm(D);
-	}
-	catch(std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
+	delete d;	
+	
+	return (0);
 }
 
 

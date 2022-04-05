@@ -25,12 +25,13 @@ RM			=	rm -f
 # File Variables
 # =============================================================================
 
-NAME		=	Form
+NAME		=	28B_28C
 HEADER		=   ./
 FOLDER		=	./
 SRC_LIST 	=	main.cpp \
 				Bureaucrat.cpp \
-				Form.cpp
+				Form.cpp \
+				ShrubberyCreationForm.cpp
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:.cpp=.o)
 
