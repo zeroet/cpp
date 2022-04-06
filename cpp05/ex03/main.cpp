@@ -5,124 +5,70 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main (void)
 {
-	
-	std::cout << "====================ShrubberyCreationForm================" << std::endl;
+	Intern i;
 
-	{
-		Form *d = new ShrubberyCreationForm("str");
-		Bureaucrat b("Odin", 100);
-		Bureaucrat c("Thor", 137);
-		Bureaucrat a("Loki", 146);
-	
-		std::cout << b << std::endl;
-		std::cout << c << std::endl;
-		std::cout << *d;
-	
-		std::cout << std::endl;
-		std::cout << "--------------------execute test---------------" << std::endl;
-		std::cout << std::endl;
-		b.executeForm(*d);
-		std::cout << std::endl;
-		c.executeForm(*d);
-		std::cout << std::endl;
-		a.executeForm(*d);
-		std::cout << std::endl;
-		
-		std::cout << std::endl;
-		std::cout << "--------------------sign test---------------" << std::endl;
-		std::cout << std::endl;
-		a.signForm(*d);
-		std::cout << *d;
-		b.signForm(*d);
-		std::cout << *d;
-		c.signForm(*d);
-		std::cout << *d;
-	
-		delete d;	
-
-	}
+	Bureaucrat a("Thor", 1);
+	Bureaucrat b("Odin", 15);
+	Bureaucrat c("Loki", 70);
+	Bureaucrat d("Valkyrie", 140);
 
 	std::cout << std::endl;
+	std::cout << "-----------------------make Form test-------------------------" << std::endl;
 	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << "====================RobotomyRequestForm================" << std::endl;
 
-	{
-		Form *q = new RobotomyRequestForm("Robo");
-		Bureaucrat b("Odin", 45);
-		Bureaucrat c("Thor", 73);
-		Bureaucrat a("Loki", 30);
+
+	Form *f1 = i.makeForm(P_Form, "InternA");
+	std::cout << std::endl;
+	Form *f2 = i.makeForm(R_Form, "InternB");
+	std::cout << std::endl;
+	Form *f3 = i.makeForm(S_Form, "InternC");
+	std::cout << std::endl;
+	i.makeForm("X_Form", "InternD");
 	
-		std::cout << b << std::endl;
-		std::cout << c << std::endl;
-		std::cout << *q;
+	std::cout << std::endl;
+	std::cout << "-----------------------Form cout test-------------------------" << std::endl;
+	std::cout << std::endl;
+
+	std::cout << *f1 << std::endl;
+	std::cout << *f2 << std::endl;
+	std::cout << *f3 << std::endl;
+
 	
-		std::cout << std::endl;
-		std::cout << "--------------------execute test---------------" << std::endl;
-		std::cout << std::endl;
-		b.executeForm(*q);
-		std::cout << std::endl;
-		c.executeForm(*q);
-		std::cout << std::endl;
-		a.executeForm(*q);
-		std::cout << std::endl;
-		
-		std::cout << std::endl;
-		std::cout << "--------------------sign test---------------" << std::endl;
-		std::cout << std::endl;
-		a.signForm(*q);
-		std::cout << *q;
-		b.signForm(*q);
-		std::cout << *q;
-		c.signForm(*q);
-		std::cout << *q;
-	
-		delete q;	
-	}	
-		
+	std::cout << std::endl;
+	std::cout << "-----------------------Form Sign test-------------------------" << std::endl;
+	std::cout << std::endl;
+
+	a.signForm(*f1);	
+	std::cout << *f1 << std::endl;
+	b.signForm(*f2);	
+	std::cout << *f2 << std::endl;
+	c.signForm(*f3);
+	std::cout << *f3 << std::endl;
+	d.signForm(*f1);
 
 	std::cout << std::endl;
+	std::cout << "-----------------------Form execute test-------------------------" << std::endl;
 	std::cout << std::endl;
+
+	a.executeForm(*f1);
 	std::cout << std::endl;
-	std::cout << "====================PresidentialPardonForm================" << std::endl;
+	b.executeForm(*f2);
+	std::cout << std::endl;
+	c.executeForm(*f3);
+	std::cout << std::endl;
+	d.executeForm(*f1);
+	std::cout << std::endl;
 
-	{
-		Form *w = new PresidentialPardonForm("Sorry");
-		Bureaucrat b("Odin", 4);
-		Bureaucrat c("Thor", 25);
-		Bureaucrat a("Loki", 50);
-	
-		std::cout << b << std::endl;
-		std::cout << c << std::endl;
-		std::cout << *w;
-	
-		std::cout << std::endl;
-		std::cout << "--------------------execute test---------------" << std::endl;
-		std::cout << std::endl;
-		b.executeForm(*w);
-		std::cout << std::endl;
-		c.executeForm(*w);
-		std::cout << std::endl;
-		a.executeForm(*w);
-		std::cout << std::endl;
-		
-		std::cout << std::endl;
-		std::cout << "--------------------sign test---------------" << std::endl;
-		std::cout << std::endl;
-		a.signForm(*w);
-		std::cout << *w;
-		b.signForm(*w);
-		std::cout << *w;
-		c.signForm(*w);
-		std::cout << *w;
-	
-		delete w;	
-	}	
-		
 
+
+
+	delete f1;
+	delete f2;
+	delete f3;
 
 
 

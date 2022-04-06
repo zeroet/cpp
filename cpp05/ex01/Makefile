@@ -25,7 +25,7 @@ RM			=	rm -f
 # File Variables
 # =============================================================================
 
-NAME		=	Bureaucrat
+NAME		=	Form
 HEADER		=   ./
 FOLDER		=	./
 SRC_LIST 	=	main.cpp \

@@ -7,6 +7,14 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
+#include <string>
+
+#define F_TYPE 3
+
+#define P_Form "presidential pardon"
+#define R_Form "robotomy request"
+#define S_Form "shrubbery creation"
+
 class Intern
 {
 	public:
