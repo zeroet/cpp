@@ -47,7 +47,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &rhs)
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const &rhs)
 {
-//	this->_Name = rhs._Name;
+//	this->_Name = rhs._Name; 
 	this->_Grade = rhs._Grade;
 	std::cout << YELLOW << "Bureaucrat assignement fnc called" << FIN << std::endl;
 	return (*this);
