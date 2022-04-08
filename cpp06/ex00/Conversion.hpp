@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
 
 # define YELLOW "\033[0;38;5;220m"
 # define GREEN "\033[0;38;5;42m"

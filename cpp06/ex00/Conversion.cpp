@@ -22,6 +22,7 @@ Conversion::Conversion(std::string str) : _Value(str)
 	std::strcpy(c, _Value.c_str());
 	std::cout << c << std::endl;
 }
+
 Conversion::Conversion(Conversion const &rhs)
 {
 	*this = rhs;
