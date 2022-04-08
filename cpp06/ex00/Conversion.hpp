@@ -32,8 +32,6 @@ class Conversion
 		float getFloat() const;
 		double getDouble() const;
 
-		void Arg();
-
 		class Exception : public std::exception
 		{
 			public:

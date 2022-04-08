@@ -7,9 +7,21 @@ Conversion::Conversion()
 
 Conversion::Conversion(std::string str) : _Value(str)
 {
-	//std::cout << YELLOW << "Constructor called" << FIN << std::endl;
+	std::cout << YELLOW << "Constructor called" << FIN << std::endl;
+	try
+	{
+		if (std::isdigit(_Value[0]) == 0)
+			throw Conversion::Exception();
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << RED << e.what() << FIN << std::endl;
+		return ;
+	}
+	char c[100];
+	std::strcpy(c, _Value.c_str());
+	std::cout << c << std::endl;
 }
-
 Conversion::Conversion(Conversion const &rhs)
 {
 	*this = rhs;
@@ -34,11 +46,6 @@ const char * Conversion::Exception::what(void) const throw()
 	return ("Argument number check");
 }
 
-void Conversion::Arg()
-{
-	throw Conversion::Exception();
-}
-
 std::string Conversion::getValue() const
 {
 	return (this->_Value);
@@ -58,3 +65,5 @@ double Conversion::getDouble() const
 {
 	return (std::stod(this->_Value));
 }
+
+

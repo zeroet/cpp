@@ -2,26 +2,12 @@
 
 int main(int ac, char **av)
 {
-	Conversion tmp;
-
-	try
-	{
-		if (ac != 2)
-			tmp.Arg();
-	}
-	catch (const std::exception &e)
+	if (ac != 2)
 	{	
-		std::cerr << e.what() << FIN << std::endl;
-//		tmp.~Conversion();
-		exit(0);
+		std::cout << RED << "ERROR : Arg == 1" << FIN << std::endl;
+		return (1);
 	}
-		
-	
 	Conversion convert(av[1]);
-	std::cout << convert.getValue() << std::endl;
-	std::cout << convert.getInt() << std::endl;	
-	std::cout << convert.getFloat() << "f" <<  std::endl;
-	std::cout << convert.getDouble() << ".0" <<  std::endl;
-
+	
 	return (0);
 }
