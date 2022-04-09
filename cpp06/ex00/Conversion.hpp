@@ -27,7 +27,8 @@ class Conversion
 
 		std::string getValue() const;
 		
-		
+		void	convertNum();
+
 		int getInt() const;
 		float getFloat() const;
 		double getDouble() const;

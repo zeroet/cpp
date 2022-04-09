@@ -18,10 +18,17 @@ Conversion::Conversion(std::string str) : _Value(str)
 		std::cerr << RED << e.what() << FIN << std::endl;
 		return ;
 	}
-	char c[100];
-	std::strcpy(c, _Value.c_str());
-	std::cout << c << std::endl;
+	convertNum();
 }
+
+void	Conversion::convertNum()
+{
+	double *ptr = NULL;
+	
+	std::cout << *ptr << std::endl;
+	
+}
+
 Conversion::Conversion(Conversion const &rhs)
 {
 	*this = rhs;
