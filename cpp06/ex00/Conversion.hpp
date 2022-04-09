@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <limits>
 #include <cmath>
 
 # define YELLOW "\033[0;38;5;220m"
