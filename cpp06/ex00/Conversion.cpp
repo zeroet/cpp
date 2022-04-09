@@ -1,76 +1,135 @@
 #include "Conversion.hpp"
+#include <cctype>
 
-Conversion::Conversion()
+Conversion::Conversion() : _Input(""), _Value(0.0), _e(false)
 {
-	std::cout << YELLOW <<  "Default Constructor called" << FIN << std::endl;
+	//std::cout << YELLOW <<  "Default Constructor called" << FIN << std::endl;
 }
 
-Conversion::Conversion(std::string str) : _Value(str)
+Conversion::Conversion(const std::string &str) : _Input(str), _Value(0.0), _e(false)
 {
-	std::cout << YELLOW << "Constructor called" << FIN << std::endl;
+	//std::cout << YELLOW << "Constructor called" << FIN << std::endl;
 	try
 	{
-		if (std::isdigit(_Value[0]) == 0)
-			throw Conversion::Exception();
+		char *ptr = NULL;
+		*(const_cast<double*>(&_Value)) = std::strtod(_Input.c_str(), &ptr);
+		if (_Value == 0.0 && (_Input[0] != '-' && _Input[0] != '+' && !std::isdigit(_Input[0])))
+			throw std::bad_alloc();
+		if (*ptr && std::strcmp(ptr, "f"))
+			throw std::bad_alloc();
 	}
-	catch (std::exception &e)
+	catch (std::exception &)
 	{
-		std::cerr << RED << e.what() << FIN << std::endl;
-		return ;
+		_e = true;
 	}
-	convertNum();
 }
 
-void	Conversion::convertNum()
-{
-	double *ptr = NULL;
-	
-	std::cout << *ptr << std::endl;
-	
-}
 
-Conversion::Conversion(Conversion const &rhs)
+Conversion::Conversion(Conversion const &rhs) : _Input(rhs.getInput()), _Value(rhs.getValue()), _e(false) 
 {
-	*this = rhs;
-	std::cout << YELLOW << "Copy constructor called" << FIN << std::endl;
+	//std::cout << YELLOW << "Copy constructor called" << FIN << std::endl;
 }
 
 Conversion::~Conversion()
 {
-	std::cout << YELLOW << "Destructor called" << FIN << std::endl;
+//	std::cout << YELLOW << "Destructor called" << FIN << std::endl;
 }
 
 Conversion & Conversion::operator=(Conversion const & rhs)
 {
-	this->_Value = rhs._Value;
-	std::cout << YELLOW << "Assignment effcetue" << FIN << std::endl;
+	if (this != &rhs)
+	{
+		_e = rhs.getError();
+		*(const_cast<std::string*>(&_Input)) = rhs.getInput();
+		*(const_cast<double*>(&_Value)) = rhs.getValue();
+	//	std::cout << YELLOW << "Assignment effcetue" << FIN << std::endl;
+	}	
 	return *this;
 }
 
-const char * Conversion::Exception::what(void) const throw()
+char Conversion::toChar() const
 {
-	std::cout << RED;
-	return ("Argument number check");
+	return static_cast<char>(_Value);
 }
 
-std::string Conversion::getValue() const
+int	Conversion::toInt() const
 {
-	return (this->_Value);
+	return static_cast<int>(_Value);
 }
 
-int	Conversion::getInt() const
+float Conversion::toFloat() const
 {
-	return (std::stoi(this->_Value));
+	return static_cast<float>(_Value);
 }
 
-float Conversion::getFloat() const
+double Conversion::toDouble() const
 {
-	return (std::stof(this->_Value));
+	return static_cast<double>(_Value);
 }
 
-double Conversion::getDouble() const
+bool Conversion::getError() const
 {
-	return (std::stod(this->_Value));
+	return _e;
 }
 
+const double& Conversion::getValue() const
+{
+	return _Value;
+}
+
+const std::string & Conversion::getInput() const
+{
+	return _Input;
+}
+
+static void	printToChar(std::ostream &o, const Conversion & rhs)
+{
+	o << "char: ";
+	if (std::isnan(rhs.getValue()) || std::isinf(rhs.getValue()))
+		o << "impossible" << std::endl;
+	else if (std::isprint(rhs.toChar()))
+		o << "'" << rhs.toChar() << "'" << std::endl;
+	else
+		o << "Non dispalyable" << std::endl;
+}
+
+static void	printToInt(std::ostream &o, const Conversion &rhs)
+{
+	o << "int: ";
+	if (std::isnan(rhs.getValue()) || std::isinf(rhs.getValue()))
+		o << "impossible" << std::endl;
+	else
+		o << rhs.toInt() << std::endl;
+}
+
+static void	printToReal(std::ostream &o, const Conversion &rhs)
+{
+	if (std::isnan(rhs.getValue()) || std::isinf(rhs.getValue()))
+	{	
+		o << "float: " << std::showpos << rhs.toFloat() << "f" << std::endl;
+		o << "double: " <<std::showpos << rhs.toDouble() << std::endl;
+		return ;
+	}
+	if (rhs.toFloat() == static_cast<int64_t>(rhs.toFloat()))
+		o << "float: " << rhs.toFloat() << ".0f" << std::endl;
+	else
+		o <<"flaot: " << std::setprecision(std::numeric_limits<float>::digits10) << rhs.toFloat() << "f" << std::endl;
+	if (rhs.toDouble() == static_cast<int64_t>(rhs.toDouble()))
+		o << "double: " << rhs.toDouble() << ".0" << std::endl;
+	else
+		o << "double: " << std::setprecision(std::numeric_limits<double>::digits10) << rhs.toDouble() << std::endl;
+}
+
+std::ostream& operator<<(std::ostream& o, const Conversion &rhs)
+{
+	if (rhs.getError())
+	{		
+		o << "Converting Failed" << std::endl;
+		return o;
+	}
+	printToChar(o, rhs);
+	printToInt(o, rhs);
+	printToReal(o, rhs);
+	return o;
+}
 

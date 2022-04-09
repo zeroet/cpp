@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include <cstring>
+#include <iomanip>
+#include <cmath>
 
 # define YELLOW "\033[0;38;5;220m"
 # define GREEN "\033[0;38;5;42m"
@@ -17,30 +18,27 @@
 class Conversion 
 {
 	private:
-		std::string _Value;
+		const std::string _Input;
+		const double _Value;
+		bool _e;
 
 	public:
 		Conversion();
-		Conversion(std::string str);
+		Conversion(const std::string &str);
 		~Conversion();
 		Conversion(Conversion const &rhs);
 		Conversion & operator=(Conversion const &rhs);
 
-		std::string getValue() const;
-		
-		void	convertNum();
+		const std::string & getInput() const;
+		const double & getValue() const;
+		bool getError() const;
 
-		int getInt() const;
-		float getFloat() const;
-		double getDouble() const;
-
-		class Exception : public std::exception
-		{
-			public:
-				const char *what(void) const throw();
-		};
-		
-
+		double toDouble() const;
+		float toFloat() const;
+		int	toInt() const;
+		char toChar() const;
 };
+
+std::ostream& operator<<(std::ostream& o, const Conversion &rhs);
 
 #endif
