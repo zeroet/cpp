@@ -18,13 +18,13 @@ struct Data
 
 uintptr_t serialize(Data *ptr)
 {
-	std::cout << YELLOW << "Serialize : Data* to <uintptr_t>    " <<   ptr <<  FIN << std::endl;
+//	std::cout << YELLOW << "Serialize : Data* to <uintptr_t>    " <<   ptr <<  FIN << std::endl;
 	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
 Data * deserialize(uintptr_t raw)
 {
-	std::cout <<  GREEN << "Deserialize : <uintptr_t> to Data*     " << &raw << FIN << std::endl;
+//	std::cout <<  GREEN << "Deserialize : <uintptr_t> to Data*     " << &raw << FIN << std::endl;
 	return (reinterpret_cast<Data *>(raw));
 }
 
@@ -35,6 +35,13 @@ int main()
 	uintptr_t raw;
 	Data *ptr = NULL;
 
+	std::cout << ORANGE << "Origin Value Name : " << p->name << std::endl;
+	std::cout << "Origin Value Age : " <<  p->age << std::endl;
+	std::cout << "Origin Value Tall : " << p->tall << FIN <<   std::endl;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+
 
 	raw = serialize(p);
 	
@@ -43,8 +50,16 @@ int main()
 
 	ptr = deserialize(raw);
 
-	
-	std::cout << PINK << "Res ptr : " << &ptr << std::endl;
+	std::cout << GREEN << "Origin Data *    " << p << FIN << std::endl;	
+	std::cout << YELLOW << "Serialize : Data* to <uintptr_t>    " <<   &raw <<  FIN << std::endl;
+	std::cout << PINK << "Deserialize : <uintptr_t> to Data*    " << &ptr << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	ptr->name = "new";
+	ptr->age = 24;
+	ptr->tall = 24.24f;
+
 	std::cout << ORANGE << "Value Name : " << ptr->name << std::endl;
 	std::cout << "Value Age : " <<  ptr->age << std::endl;
 	std::cout << "Value Tall : " << ptr->tall << std::endl;
