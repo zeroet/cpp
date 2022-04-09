@@ -8,6 +8,11 @@ int main(int ac, char **av)
 		return (1);
 	}
 	Conversion convert(av[1]);
-	
+
+	std::cout << convert.getInt() << std::endl;
+	std::cout << convert.getFloat() << std::endl;
+
+
+
 	return (0);
 }

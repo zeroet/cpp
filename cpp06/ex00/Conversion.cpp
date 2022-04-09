@@ -21,6 +21,7 @@ Conversion::Conversion(std::string str) : _Value(str)
 	convertNum();
 }
 
+<<<<<<< HEAD
 void	Conversion::convertNum()
 {
 	double *ptr = NULL;
@@ -29,6 +30,8 @@ void	Conversion::convertNum()
 	
 }
 
+=======
+>>>>>>> 0f078cd291df6d18689a6828c36faff40bab09b2
 Conversion::Conversion(Conversion const &rhs)
 {
 	*this = rhs;
