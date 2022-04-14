@@ -1,16 +1,21 @@
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
+#include <random>
 
-#define MAX_VAL 750
+#define MAX_VAL 10
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
+    
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<int> dis(0, 1500);
+
+	for (int i = 0; i < MAX_VAL; i++)
     {
-        const int value = rand();
-        numbers[i] = value;
+        const int value = dis(gen);
+		numbers[i] = value;
         mirror[i] = value;
     }
     //SCOPE
@@ -46,7 +51,8 @@ int main(int, char**)
 
     for (int i = 0; i < MAX_VAL; i++)
     {
-        numbers[i] = rand();
+        numbers[i] = dis(gen);
+		std::cout << "[" << i << "]" << numbers[i] << std::endl;
     }
     delete [] mirror;//
     return 0;
