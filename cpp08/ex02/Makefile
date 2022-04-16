@@ -28,7 +28,7 @@ RM			=	rm -f
 NAME		=	MutantStack	
 HEADER		=   ./
 FOLDER		=	./
-SRC_LIST 	=	main.cpp \
+SRC_LIST 	=	main.cpp 
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:.cpp=.o)
 
