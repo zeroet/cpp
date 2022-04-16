@@ -28,7 +28,8 @@ RM			=	rm -f
 NAME		=	Span	
 HEADER		=   ./
 FOLDER		=	./
-SRC_LIST 	=	main.cpp
+SRC_LIST 	=	main.cpp \
+				Span.cpp
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:.cpp=.o)
 
